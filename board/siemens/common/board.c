@@ -38,7 +38,7 @@
 
 DECLARE_GLOBAL_DATA_PTR;
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void set_uart_mux_conf(void)
 {
 	enable_uart0_pin_mux();
@@ -67,7 +67,7 @@ void sdram_init(void)
 
 	return;
 }
-#endif /* #ifeq ($(CONFIG_SPL_BUILD),y) */
+#endif /* #ifdef CONFIG_SPL_BUILD */
 
 #ifndef CONFIG_SPL_BUILD
 #define FACTORYSET_EEPROM_ADDR		0x50

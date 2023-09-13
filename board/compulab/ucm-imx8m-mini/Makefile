@@ -7,7 +7,7 @@
 ccflags-y += -I$(srctree)/board/compulab/plat/imx8mm/
 ccflags-y += -I$(srctree)/board/compulab/plat/imx8/
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y += spl.o
 else
 obj-y += ucm-imx8m-mini.o

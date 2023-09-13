@@ -41,7 +41,7 @@
 
 DECLARE_GLOBAL_DATA_PTR;
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 /* TODO(sjg@chromium.org): Remove once SPL supports device tree */
 U_BOOT_DRVINFO(tegra_gpios) = {
 	"gpio_tegra"

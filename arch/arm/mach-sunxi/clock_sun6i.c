@@ -17,7 +17,7 @@
 #include <linux/bitops.h>
 #include <linux/delay.h>
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void clock_init_safe(void)
 {
 	struct sunxi_ccm_reg * const ccm =
@@ -125,7 +125,7 @@ void clock_init_uart(void)
 #endif
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void clock_set_pll1(unsigned int clk)
 {
 	struct sunxi_ccm_reg * const ccm =

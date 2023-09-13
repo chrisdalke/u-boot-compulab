@@ -50,7 +50,7 @@ endif # !CONFIG_SPL_BUILD
 obj-$(CONFIG_$(SPL_TPL_)BOOTSTAGE) += bootstage.o
 obj-$(CONFIG_$(SPL_TPL_)BLOBLIST) += bloblist.o
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 ifdef CONFIG_SPL_DFU
 obj-$(CONFIG_DFU_OVER_USB) += dfu.o
 endif
@@ -71,7 +71,7 @@ obj-$(CONFIG_DDR_SPD) += ddr_spd.o
 obj-$(CONFIG_SPD_EEPROM) += ddr_spd.o
 obj-$(CONFIG_HWCONFIG) += hwconfig.o
 obj-$(CONFIG_BOUNCE_BUFFER) += bouncebuf.o
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 ifdef CONFIG_TPL_BUILD
 obj-$(CONFIG_TPL_SERIAL) += console.o
 else

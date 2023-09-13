@@ -84,7 +84,7 @@ const int ddrconf_table[] = {
 #define DQS_GATE_TRAINING_ERROR_RANK0	(1 << 4)
 #define DQS_GATE_TRAINING_ERROR_RANK1	(2 << 4)
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 static void copy_to_reg(u32 *dest, const u32 *src, u32 n)
 {
 	int i;
@@ -878,7 +878,7 @@ static int conv_of_plat(struct udevice *dev)
 
 static int rk3188_dmc_probe(struct udevice *dev)
 {
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	struct rk3188_sdram_params *plat = dev_get_plat(dev);
 	struct regmap *map;
 	struct udevice *dev_clk;
@@ -888,7 +888,7 @@ static int rk3188_dmc_probe(struct udevice *dev)
 
 	priv->pmu = syscon_get_first_range(ROCKCHIP_SYSCON_PMU);
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #if CONFIG_IS_ENABLED(OF_PLATDATA)
 	ret = conv_of_plat(dev);
 	if (ret)
@@ -950,12 +950,12 @@ U_BOOT_DRIVER(rockchip_rk3188_dmc) = {
 	.id = UCLASS_RAM,
 	.of_match = rk3188_dmc_ids,
 	.ops = &rk3188_dmc_ops,
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	.of_to_plat = rk3188_dmc_of_to_plat,
 #endif
 	.probe = rk3188_dmc_probe,
 	.priv_auto	= sizeof(struct dram_info),
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	.plat_auto	= sizeof(struct rk3188_sdram_params),
 #endif
 };

@@ -220,7 +220,7 @@ int arch_cpu_init(void)
 	static struct px30_grf * const grf = (void *)GRF_BASE;
 	u32 __maybe_unused val;
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	/* We do some SoC one time setting here. */
 	/* Disable the ddr secure region setting to make it non-secure */
 	writel(0x0, DDR_FW_BASE + FW_DDR_CON);

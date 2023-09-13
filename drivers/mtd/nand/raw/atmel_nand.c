@@ -38,7 +38,7 @@
 
 #ifdef CONFIG_ATMEL_NAND_HW_PMECC
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #undef CONFIG_SYS_NAND_ONFI_DETECTION
 #endif
 
@@ -1253,7 +1253,7 @@ static int at91_nand_ready(struct mtd_info *mtd)
 }
 #endif
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 /* The following code is for SPL */
 static struct mtd_info *mtd;
 static struct nand_chip nand_chip;

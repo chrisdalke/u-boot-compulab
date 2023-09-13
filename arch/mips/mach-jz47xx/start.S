@@ -18,7 +18,7 @@
 	.globl _start
 	.text
 _start:
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 
 	/* magic value ("MSPL") */
 	.word 0x4d53504c

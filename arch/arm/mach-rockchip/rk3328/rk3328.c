@@ -49,7 +49,7 @@ struct mm_region *mem_map = rk3328_mem_map;
 
 int arch_cpu_init(void)
 {
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	/* We do some SoC one time setting here. */
 
 	/* Disable the ddr secure region setting to make it non-secure */

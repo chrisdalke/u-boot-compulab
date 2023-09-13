@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2014 Marek Vasut <marex@denx.de>
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y	:= novena_spl.o
 else
 obj-y	:= novena.o

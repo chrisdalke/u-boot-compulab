@@ -14,7 +14,7 @@
 #include <asm/arch/clock.h>
 #include <asm/arch/sys_proto.h>
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void clock_init_safe(void)
 {
 	struct sunxi_ccm_reg * const ccm =
@@ -76,7 +76,7 @@ int clock_twi_onoff(int port, int state)
 	return 0;
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #define PLL1_CFG(N, K, M, P)	( 1 << CCM_PLL1_CFG_ENABLE_SHIFT | \
 				  0 << CCM_PLL1_CFG_VCO_RST_SHIFT |  \
 				  8 << CCM_PLL1_CFG_VCO_BIAS_SHIFT | \

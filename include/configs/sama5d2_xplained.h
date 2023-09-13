@@ -11,7 +11,7 @@
 
 #include "at91-sama5_common.h"
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #define CONFIG_SYS_INIT_SP_ADDR		0x218000
 #else
 #define CONFIG_SYS_INIT_SP_ADDR \

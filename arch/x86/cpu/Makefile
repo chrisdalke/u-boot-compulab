@@ -15,7 +15,7 @@ else
 ifndef CONFIG_SPL
 extra-y	= start.o
 else
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 extra-y	= start_from_tpl.o
 else
 extra-y	= start_from_spl.o

@@ -10,7 +10,7 @@ else
 ifndef CONFIG_SPL
 head-y := arch/x86/cpu/start.o
 else
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 head-y	= arch/x86/cpu/start_from_tpl.o
 else
 head-y	= arch/x86/cpu/start_from_spl.o

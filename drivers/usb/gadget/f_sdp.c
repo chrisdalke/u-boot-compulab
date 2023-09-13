@@ -736,7 +736,7 @@ static u32 sdp_jump_imxheader(void *address)
 	return 0;
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 static ulong sdp_load_read(struct spl_load_info *load, ulong sector,
 			   ulong count, void *buf)
 {
@@ -825,7 +825,7 @@ static int sdp_handle_in_ep(struct spl_image_info *spl_image,
 
 		/* If imx header fails, try some U-Boot specific headers */
 		if (status) {
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 			if (IS_ENABLED(CONFIG_SPL_LOAD_IMX_CONTAINER))
 				sdp_func->jmp_address = (u32)search_container_header((ulong)sdp_func->jmp_address, sdp_func->dnl_bytes);
 			else if (IS_ENABLED(CONFIG_SPL_LOAD_FIT))
@@ -930,7 +930,7 @@ int spl_sdp_handle(int controller_index, struct spl_image_info *spl_image,
 		WATCHDOG_RESET();
 		usb_gadget_handle_interrupts(controller_index);
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 		flag = sdp_handle_in_ep(spl_image, bootdev);
 #else
 		flag = sdp_handle_in_ep(NULL, NULL);

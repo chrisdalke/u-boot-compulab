@@ -6,7 +6,7 @@
 
 obj-y += imx8mn_var_som.o
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y += spl.o
 obj-y += ddr4_timing.o
 endif

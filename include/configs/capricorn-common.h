@@ -13,7 +13,7 @@
 #include "siemens-env-common.h"
 
 /* SPL config */
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 
 #define CONFIG_SPL_MAX_SIZE		(124 * 1024)
 #define CONFIG_SYS_MONITOR_LEN		(1024 * 1024)

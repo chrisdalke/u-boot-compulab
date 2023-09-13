@@ -2,7 +2,7 @@
 #
 # (C) Copyright 2010,2011 Nvidia Corporation.
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y	+= cpu.o
 endif
 

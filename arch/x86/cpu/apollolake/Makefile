@@ -11,7 +11,7 @@ ifndef CONFIG_TPL_BUILD
 obj-y += cpu.o
 obj-y += punit.o
 obj-y += fsp_bindings.o
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y += fsp_m.o
 endif
 endif

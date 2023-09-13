@@ -14,7 +14,7 @@
 #undef CONFIG_SYS_AT91_MAIN_CLOCK
 #define CONFIG_SYS_AT91_MAIN_CLOCK      24000000 /* from 24 MHz crystal */
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #define CONFIG_SYS_INIT_SP_ADDR		0x218000
 #else
 #define CONFIG_SYS_INIT_SP_ADDR \

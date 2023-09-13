@@ -94,7 +94,7 @@ void jz4780_efuse_init(u32 ahb2_rate);
 
 void jz4780_tcu_wdt_start(void);
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 int jz_mmc_init(void __iomem *base);
 #endif
 

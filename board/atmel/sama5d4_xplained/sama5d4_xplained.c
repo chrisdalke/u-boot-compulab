@@ -144,7 +144,7 @@ int dram_init(void)
 }
 
 /* SPL */
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void spl_board_init(void)
 {
 #if CONFIG_NAND_BOOT

@@ -6,7 +6,7 @@
 
 obj-y += imx8mq_val.o
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y += spl.o
 obj-y += ddr/helper.o
 ifdef CONFIG_TARGET_IMX8MQ_DDR3L_VAL

@@ -51,7 +51,7 @@ int board_qspi_init(void)
 #endif
 
 #ifdef CONFIG_NAND_MXS
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 static iomux_v3_cfg_t const gpmi_pads[] = {
 	IMX8MQ_PAD_NAND_ALE__RAWNAND_ALE | MUX_PAD_CTRL(NAND_PAD_CTRL),
 	IMX8MQ_PAD_NAND_CE0_B__RAWNAND_CE0_B | MUX_PAD_CTRL(NAND_PAD_CTRL),
@@ -73,7 +73,7 @@ static iomux_v3_cfg_t const gpmi_pads[] = {
 
 static void setup_gpmi_nand(void)
 {
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	imx_iomux_v3_setup_multiple_pads(gpmi_pads, ARRAY_SIZE(gpmi_pads));
 #endif
 
@@ -158,7 +158,7 @@ int board_phy_config(struct phy_device *phydev)
 #define USB_PHY_CTRL2_TXENABLEN0	BIT(8)
 
 static struct dwc3_device dwc3_device_data = {
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	.maximum_speed = USB_SPEED_HIGH,
 #else
 	.maximum_speed = USB_SPEED_SUPER,

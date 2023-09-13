@@ -11,7 +11,7 @@
 /* PHY needs a longer autoneg timeout */
 #define PHY_ANEG_TIMEOUT		20000
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #define CONFIG_EXTRA_ENV_SETTINGS					\
 	"dfu_alt_info_ram=u-boot.itb ram "				\
 			__stringify(CONFIG_SPL_LOAD_FIT_ADDRESS)	\

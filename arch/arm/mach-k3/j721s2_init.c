@@ -22,7 +22,7 @@
 #include <mmc.h>
 #include <remoteproc.h>
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 
 static void ctrl_mmr_unlock(void)
 {

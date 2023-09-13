@@ -607,7 +607,7 @@ int mmc_get_env_dev(void)
 #endif
 #endif
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 
 static void sunxi_spl_store_dram_size(phys_addr_t dram_size)
 {

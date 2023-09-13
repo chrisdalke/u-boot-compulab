@@ -32,7 +32,7 @@ const char * const boot_devices[BROM_LAST_BOOTSOURCE + 1] = {
 	[BROM_BOOTSOURCE_SD] = "/dwmmc@ff0c0000",
 };
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 static void configure_l2ctlr(void)
 {
 	u32 l2ctlr;
@@ -73,7 +73,7 @@ int rk3288_qos_init(void)
 
 int arch_cpu_init(void)
 {
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	configure_l2ctlr();
 #else
 	/* We do some SoC one time setting here. */

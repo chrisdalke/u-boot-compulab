@@ -75,7 +75,7 @@ int board_init(void)
 	return 0;
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void spl_board_init(void)
 {
 	spl_init_keystone_plls();

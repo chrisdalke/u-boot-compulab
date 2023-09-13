@@ -110,7 +110,7 @@ int board_early_init_f(void)
 }
 #endif
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void spl_init_keystone_plls(void)
 {
 	init_plls();

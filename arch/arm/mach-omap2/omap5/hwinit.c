@@ -51,7 +51,7 @@ void do_set_mux32(u32 base, struct pad_conf_entry const *array, int size)
 		writel(pad->val, base + pad->offset);
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 /* LPDDR2 specific IO settings */
 static void io_settings_lpddr2(void)
 {

@@ -196,7 +196,7 @@
 #define CONFIG_SPL_PAD_TO	32768
 #endif
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 /* defines for SPL */
 #define CONFIG_SYS_SPL_MALLOC_START	(CONFIG_SYS_TEXT_BASE - \
 						CONFIG_SYS_MALLOC_LEN)

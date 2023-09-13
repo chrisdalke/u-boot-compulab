@@ -7,7 +7,7 @@
 # SPDX-License-Identifier: GPL-2.0
 #
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y	:= porter_spl.o
 else
 obj-y	:= porter.o qos.o

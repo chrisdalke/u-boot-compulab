@@ -6,6 +6,6 @@
 
 obj-y += imx8qm_rom7720_a1.o
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y += spl.o
 endif

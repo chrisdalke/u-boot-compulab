@@ -10,7 +10,7 @@
 #ifdef CONFIG_CHAIN_OF_TRUST
 #define CONFIG_FSL_SEC_MON
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 /*
  * Define the key hash for U-Boot here if public/private key pair used to
  * sign U-boot are different from the SRK hash put in the fuse
@@ -21,7 +21,7 @@
  */
 
 #define CONFIG_SPL_UBOOT_KEY_HASH	NULL
-#endif /* ifeq ($(CONFIG_SPL_BUILD),y) */
+#endif /* ifdef CONFIG_SPL_BUILD */
 
 #define CONFIG_KEY_REVOCATION
 

@@ -12,7 +12,7 @@ obj-y	+= reset.o
 ifeq ($(CONFIG_TIMER),)
 obj-y	+= timer.o
 else
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y	+= timer.o
 endif
 endif

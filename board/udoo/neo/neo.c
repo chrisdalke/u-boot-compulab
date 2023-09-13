@@ -370,7 +370,7 @@ int board_late_init(void)
 	return 0;
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 
 #include <linux/libfdt.h>
 #include <asm/arch/mx6-ddr.h>

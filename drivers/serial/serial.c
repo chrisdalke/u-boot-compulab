@@ -332,7 +332,7 @@ static struct serial_device *get_current(void)
 
 	/* We must have a console device */
 	if (!dev) {
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 		puts("Cannot find console\n");
 		hang();
 #else

@@ -39,7 +39,7 @@ endif
 
 export SPL_NAME
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 SPL_ := SPL_
 ifeq ($(CONFIG_TPL_BUILD),y)
 SPL_TPL_ := TPL_

@@ -136,7 +136,7 @@ int board_late_init(void)
 	return 0;
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #include <asm/arch/mx6-ddr.h>
 #include <asm/arch/mx6q-ddr.h>
 #include <spl.h>

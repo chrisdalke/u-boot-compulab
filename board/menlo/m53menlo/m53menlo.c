@@ -536,7 +536,7 @@ int checkboard(void)
 /*
  * NAND SPL
  */
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void spl_board_init(void)
 {
 	setup_iomux_nand();

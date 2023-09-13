@@ -16,7 +16,7 @@
 #include <asm/arch/sys_proto.h>
 
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 
 void clock_init_safe(void)
 {
@@ -81,7 +81,7 @@ void clock_init_uart(void)
 			   CONFIG_CONS_INDEX - 1));
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void clock_set_pll1(unsigned int clk)
 {
 	struct sunxi_ccm_reg * const ccm =

@@ -53,7 +53,7 @@ int board_init(void)
 	return 0;
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #include <spl.h>
 
 #ifdef CONFIG_SPL_LOAD_FIT

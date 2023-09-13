@@ -8,7 +8,7 @@
 
 MINIMAL=
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 ifdef CONFIG_SPL_INIT_MINIMAL
 MINIMAL=y
 endif

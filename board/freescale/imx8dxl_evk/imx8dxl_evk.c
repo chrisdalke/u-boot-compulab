@@ -55,7 +55,7 @@ static void setup_iomux_uart(void)
 	imx8_iomux_setup_multiple_pads(uart0_pads, ARRAY_SIZE(uart0_pads));
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #ifdef CONFIG_NAND_MXS
 static iomux_cfg_t gpmi_nand_pads[] = {
 	SC_P_EMMC0_DATA0 | MUX_MODE_ALT(1) | MUX_PAD_CTRL(GPMI_NAND_PAD_CTRL),
@@ -109,7 +109,7 @@ int board_early_init_f(void)
 
 	setup_iomux_uart();
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #ifdef CONFIG_NAND_MXS
 	imx8dxl_gpmi_nand_initialize();
 #endif

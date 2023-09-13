@@ -38,7 +38,7 @@ WEAK(lowlevel_init)
 	 * Set up global data for boards that still need it. This will be
 	 * removed soon.
 	 */
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	ldr	r9, =gdata
 #else
 	sub	sp, sp, #GD_SIZE

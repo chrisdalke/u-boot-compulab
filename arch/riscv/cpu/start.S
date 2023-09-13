@@ -193,7 +193,7 @@ wait_for_gd_init:
 	la	t5, board_init_f
 	jalr	t5			/* jump to board_init_f() */
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 spl_clear_bss:
 	la	t0, __bss_start
 	la	t1, __bss_end

@@ -166,7 +166,7 @@ static int board_qspi_init(void)
 }
 #endif
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 
 #define USDHC_PAD_CTRL (PAD_CTL_PKE | PAD_CTL_PUE |		\
 	PAD_CTL_PUS_22K_UP  | PAD_CTL_SPEED_LOW |		\
@@ -453,7 +453,7 @@ void board_quiesce_devices(void)
 #endif
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #include <linux/libfdt.h>
 #include <spl.h>
 #include <asm/arch/mx6-ddr.h>

@@ -96,7 +96,7 @@
 #endif
 
 /* overrides for SPL build here */
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 
 /* remove USB */
 #ifdef CONFIG_USB_EHCI_TEGRA

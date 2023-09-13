@@ -39,7 +39,7 @@ u32 spl_boot_device(void)
 	return 0;
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 
 void spl_board_init(void)
 {

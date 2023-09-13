@@ -9,7 +9,7 @@
 _start:
 	ARM_VECTORS
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	.word	0x0badc0d3;
 	.word	0x0badc0d3;
 	.word	0x0badc0d3;

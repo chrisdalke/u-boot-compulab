@@ -5,7 +5,7 @@
 
 obj-y += board.o
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y += spl.o
 else
 obj-y += ../common/factoryset.o

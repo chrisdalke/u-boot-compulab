@@ -91,7 +91,7 @@ int fsl_setenv_chain_of_trust(void)
 }
 #endif
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void spl_validate_uboot(uint32_t hdr_addr, uintptr_t img_addr)
 {
 	int res;
@@ -156,4 +156,4 @@ void __noreturn jump_to_image_no_args(struct spl_image_info *spl_image)
 	image_entry();
 }
 #endif /* ifdef CONFIG_SPL_FRAMEWORK */
-#endif /* ifeq ($(CONFIG_SPL_BUILD),y) */
+#endif /* ifdef CONFIG_SPL_BUILD */

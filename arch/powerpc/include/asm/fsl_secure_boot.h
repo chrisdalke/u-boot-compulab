@@ -71,7 +71,7 @@
 #endif /* #ifdef CONFIG_NXP_ESBC */
 
 #ifdef CONFIG_CHAIN_OF_TRUST
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 /*
  * PPAACT and SPAACT table for PAMU must be placed on DDR after DDR init
  * due to space crunch on CPC and thus malloc will not work.
@@ -90,7 +90,7 @@
  */
 
 #define CONFIG_SPL_UBOOT_KEY_HASH	NULL
-#endif /* ifeq ($(CONFIG_SPL_BUILD),y) */
+#endif /* ifdef CONFIG_SPL_BUILD */
 
 #define CONFIG_FSL_SEC_MON
 

@@ -79,7 +79,7 @@
 #define CONFIG_SYS_MMC_U_BOOT_START	(0x11000000)
 #define CONFIG_SYS_MMC_U_BOOT_OFFS	(128 << 10)
 #define CONFIG_SYS_MPC85XX_NO_RESETVEC
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #define CONFIG_SPL_COMMON_INIT_DDR
 #endif
 #elif defined(CONFIG_SPIFLASH)
@@ -93,7 +93,7 @@
 #define CONFIG_SYS_SPI_FLASH_U_BOOT_START	(0x11000000)
 #define CONFIG_SYS_SPI_FLASH_U_BOOT_OFFS	(128 << 10)
 #define CONFIG_SYS_MPC85XX_NO_RESETVEC
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #define CONFIG_SPL_COMMON_INIT_DDR
 #endif
 #elif defined(CONFIG_MTD_RAW_NAND)
@@ -154,7 +154,7 @@
 
 /* IN case of NAND bootloader relocate CCSRBAR in RAMboot code not in the 4k
        SPL code*/
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #define CONFIG_SYS_CCSR_DO_NOT_RELOCATE
 #endif
 

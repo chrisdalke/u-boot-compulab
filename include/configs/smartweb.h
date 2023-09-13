@@ -128,7 +128,7 @@
 									\
 	"mtdparts="CONFIG_MTDPARTS_DEFAULT"\0"
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #define CONFIG_SYS_INIT_SP_ADDR		0x301000
 #else
 /*

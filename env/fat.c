@@ -21,7 +21,7 @@
 #include <asm/global_data.h>
 #include <linux/stddef.h>
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 /* TODO(sjg@chromium.org): Figure out why this is needed */
 # if !defined(CONFIG_TARGET_AM335X_EVM) || defined(CONFIG_SPL_OS_BOOT)
 #  define LOADENV

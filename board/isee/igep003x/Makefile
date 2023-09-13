@@ -4,7 +4,7 @@
 #
 # Copyright (C) 2013, ISEE 2007 SL - http://www.isee.biz/
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y	+= mux.o
 endif
 

@@ -54,7 +54,7 @@ static struct mm_region rk3399_mem_map[] = {
 
 struct mm_region *mem_map = rk3399_mem_map;
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 
 #define TIMER_END_COUNT_L	0x00
 #define TIMER_END_COUNT_H	0x04
@@ -86,7 +86,7 @@ void rockchip_stimer_init(void)
 int arch_cpu_init(void)
 {
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	struct rk3399_pmusgrf_regs *sgrf;
 	struct rk3399_grf_regs *grf;
 

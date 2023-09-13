@@ -715,7 +715,7 @@ int board_late_init(void)
 	return 0;
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void do_board_detect(void)
 {
 	int rc;

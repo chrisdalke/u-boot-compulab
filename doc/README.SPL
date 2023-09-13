@@ -30,7 +30,7 @@ endif
 
 obj-$(CONFIG_SPL_BUILD) += foo.o
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	foo();
 #endif
 

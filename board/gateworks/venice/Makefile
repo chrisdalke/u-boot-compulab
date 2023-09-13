@@ -6,7 +6,7 @@
 
 obj-y += venice.o gsc.o
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y += spl.o
 ifdef CONFIG_IMX8MM
 obj-$(CONFIG_IMX8M_LPDDR4) += lpddr4_timing_imx8mm.o

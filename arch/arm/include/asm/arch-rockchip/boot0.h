@@ -12,7 +12,7 @@
  * To make life easier for everyone, we build the SPL binary with
  * space for this 4-byte header already included in the binary.
  */
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	/*
 	 * We need to add 4 bytes of space for the 'RK33' at the
 	 * beginning of the executable.	 However, as we want to keep

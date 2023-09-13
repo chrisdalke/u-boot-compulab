@@ -25,7 +25,7 @@
 #define CONFIG_SYS_MMC_U_BOOT_START	(0x11000000)
 #define CONFIG_SYS_MMC_U_BOOT_OFFS	(96 << 10)
 #define CONFIG_SYS_MPC85XX_NO_RESETVEC
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #define CONFIG_SPL_COMMON_INIT_DDR
 #endif
 #endif
@@ -45,7 +45,7 @@
 #define CONFIG_SYS_SPI_FLASH_U_BOOT_START	(0x11000000)
 #define CONFIG_SYS_SPI_FLASH_U_BOOT_OFFS	(96 << 10)
 #define CONFIG_SYS_MPC85XX_NO_RESETVEC
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #define CONFIG_SPL_COMMON_INIT_DDR
 #endif
 #endif
@@ -215,7 +215,7 @@ extern unsigned long get_sdram_size(void);
 #define CONFIG_SYS_CCSRBAR_PHYS_LOW		CONFIG_SYS_CCSRBAR
 
 /* Don't relocate CCSRBAR while in NAND_SPL */
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #define CONFIG_SYS_CCSR_DO_NOT_RELOCATE
 #endif
 

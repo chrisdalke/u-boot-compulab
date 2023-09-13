@@ -8,7 +8,7 @@
 
 int litesom_mmc_init(struct bd_info *bis);
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void litesom_init_f(void);
 #endif
 

@@ -6,7 +6,7 @@
 #include <linux/linkage.h>
 
 ENTRY(lowlevel_init)
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	mrs	x0, CurrentEL
 	cmp	x0, #12
 	b.eq	1f

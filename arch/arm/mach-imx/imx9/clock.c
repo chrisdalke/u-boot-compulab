@@ -669,7 +669,7 @@ void enable_usboh3_clk(unsigned char enable)
 	}
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void dram_pll_init(ulong pll_val)
 {
 	configure_fracpll(DRAM_PLL_CLK, pll_val);

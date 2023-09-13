@@ -2877,7 +2877,7 @@ static void rk3568_clk_init(struct rk3568_clk_priv *priv)
 			priv->gpll_hz = GPLL_HZ;
 	}
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	ret = rk3568_bus_set_clk(priv, ACLK_BUS, 150000000);
 	if (ret < 0)
 		printf("Fail to set the ACLK_BUS clock.\n");

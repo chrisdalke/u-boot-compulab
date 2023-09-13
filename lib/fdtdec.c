@@ -615,7 +615,7 @@ int fdtdec_prepare_fdt(void)
 {
 	if (!gd->fdt_blob || ((uintptr_t)gd->fdt_blob & 3) ||
 	    fdt_check_header(gd->fdt_blob)) {
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 		puts("Missing DTB\n");
 #else
 		printf("No valid device tree binary found at %p\n",
@@ -1225,7 +1225,7 @@ static void *fdt_find_separate(void)
 {
 	void *fdt_blob = NULL;
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	/* FDT is at end of BSS unless it is in a different memory region */
 	if (IS_ENABLED(CONFIG_SPL_SEPARATE_BSS))
 		fdt_blob = (ulong *)&_image_binary_end;

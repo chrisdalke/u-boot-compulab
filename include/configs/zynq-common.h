@@ -54,7 +54,7 @@
 
 /* Boot configuration */
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #define BOOTENV
 #else
 

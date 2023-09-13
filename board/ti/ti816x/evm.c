@@ -61,7 +61,7 @@ int board_eth_init(struct bd_info *bis)
 	return 0;
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 static struct module_pin_mux mmc_pin_mux[] = {
 	{ OFFSET(pincntl157), PULLDOWN_EN | PULLUDDIS | MODE(0x0) },
 	{ OFFSET(pincntl158), PULLDOWN_EN | PULLUDEN | MODE(0x0) },

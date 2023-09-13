@@ -518,7 +518,7 @@ int get_voltrail_opp(int rail_offset)
 }
 
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 /* No env to setup for SPL */
 static inline void setup_board_eeprom_env(void) { }
 

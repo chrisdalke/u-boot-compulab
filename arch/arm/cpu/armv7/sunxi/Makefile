@@ -16,6 +16,6 @@ ifndef CONFIG_SPL_BUILD
 obj-$(CONFIG_ARMV7_PSCI)	+= psci.o
 endif
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y	+= fel_utils.o
 endif

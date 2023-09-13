@@ -8,7 +8,7 @@ obj-y += dram_init.o
 obj-y += syscon.o
 obj-y += bsec.o
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y += spl.o
 obj-y += tzc400.o
 obj-$(CONFIG_STM32_ECDSA_VERIFY) += ecdsa_romapi.o

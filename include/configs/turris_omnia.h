@@ -38,7 +38,7 @@
 
 #ifdef CONFIG_MVEBU_SPL_BOOT_DEVICE_MMC
 /* SPL related MMC defines */
-# ifeq ($(CONFIG_SPL_BUILD),y)
+# ifdef CONFIG_SPL_BUILD
 #  define CONFIG_FIXED_SDHCI_ALIGNED_BUFFER	0x00180000	/* in SDRAM */
 # endif
 #endif

@@ -5,7 +5,7 @@
 
 include  $(srctree)/arch/arm/mach-omap2/config_secure.mk
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 ifeq ($(CONFIG_TI_SECURE_DEVICE),y) # Refer to README.ti-secure for more info
 # On DRA7xx/AM57xx:
 #

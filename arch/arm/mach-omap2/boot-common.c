@@ -190,7 +190,7 @@ void save_omap_boot_params(void)
 #endif
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 u32 spl_boot_device(void)
 {
 	return gd->arch.omap_boot_device;

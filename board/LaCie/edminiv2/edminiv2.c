@@ -42,7 +42,7 @@ void reset_phy(void)
  * SPL serial setup and NOR boot device selection
  */
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 
 void spl_board_init(void)
 {

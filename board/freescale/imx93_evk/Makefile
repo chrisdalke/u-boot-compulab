@@ -6,7 +6,7 @@
 
 obj-y += imx93_evk.o
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-y += spl.o
 ifdef CONFIG_IMX9_LOW_DRIVE_MODE
 obj-$(CONFIG_IMX93_EVK_LPDDR4X) += lpddr4x_timing_ld.o

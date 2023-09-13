@@ -57,7 +57,7 @@ static inline u8 uboot_loaded_by_spl(void)
  */
 static inline u32 omap_hw_init_context(void)
 {
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	return OMAP_INIT_CONTEXT_SPL;
 #else
 	if (uboot_loaded_by_spl())

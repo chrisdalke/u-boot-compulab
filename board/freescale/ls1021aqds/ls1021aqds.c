@@ -181,7 +181,7 @@ int board_early_init_f(void)
 	return 0;
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void board_init_f(ulong dummy)
 {
 #ifdef CONFIG_NAND_BOOT

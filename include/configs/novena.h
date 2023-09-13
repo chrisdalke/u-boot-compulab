@@ -44,7 +44,7 @@
 #include "imx6_spl.h"			/* common IMX6 SPL configuration */
 
 /* Ethernet Configuration */
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #undef CONFIG_DM_ETH
 #endif
 

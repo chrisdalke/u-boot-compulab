@@ -192,7 +192,7 @@ static int imx8_scu_probe(struct udevice *dev)
 	if (addr == FDT_ADDR_T_NONE)
 		return -EINVAL;
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	plat->base = (struct mu_type *)CONFIG_MU_BASE_SPL;
 #else
 	plat->base = (struct mu_type *)addr;

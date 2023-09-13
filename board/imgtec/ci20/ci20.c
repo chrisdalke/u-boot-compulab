@@ -252,7 +252,7 @@ int checkboard(void)
 	return 0;
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 
 #if defined(CONFIG_SPL_MMC)
 int board_mmc_init(struct bd_info *bd)

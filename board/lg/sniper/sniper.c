@@ -69,7 +69,7 @@ void set_muxconf_regs(void)
 	MUX_SNIPER();
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void get_board_mem_timings(struct board_sdrc_timings *timings)
 {
 	timings->mcfg = HYNIX_V_MCFG_200(256 << 20);

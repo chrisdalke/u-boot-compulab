@@ -3,7 +3,7 @@
 # (C) Copyright 2006-2009
 # Wolfgang Denk, DENX Software Engineering, wd@denx.de.
 
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 
 ifeq ($(CONFIG_$(SPL_TPL_)BUILD)$(CONFIG_$(SPL_TPL_)DM_SERIAL),yy)
 obj-y += serial-uclass.o
@@ -46,7 +46,7 @@ obj-$(CONFIG_MXC_UART) += serial_mxc.o
 obj-$(CONFIG_PXA_SERIAL) += serial_pxa.o
 obj-$(CONFIG_MESON_SERIAL) += serial_meson.o
 obj-$(CONFIG_INTEL_MID_SERIAL) += serial_intel_mid.o
-ifeq ($(CONFIG_SPL_BUILD),y)
+ifdef CONFIG_SPL_BUILD
 obj-$(CONFIG_ROCKCHIP_SERIAL) += serial_rockchip.o
 endif
 obj-$(CONFIG_XILINX_UARTLITE) += serial_xuartlite.o

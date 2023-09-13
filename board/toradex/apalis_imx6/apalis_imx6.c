@@ -799,7 +799,7 @@ void ldo_mode_set(int ldo_bypass)
 }
 #endif
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #include <spl.h>
 #include <linux/libfdt.h>
 #include "asm/arch/mx6q-ddr.h"

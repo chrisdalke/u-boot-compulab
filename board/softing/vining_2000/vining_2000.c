@@ -426,7 +426,7 @@ void board_preboot_os(void)
 	setbits_le32(&gpc_regs->cntr, PCIE_PHY_PUP_REQ);
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 #include <linux/libfdt.h>
 #include <spl.h>
 #include <asm/arch/mx6-ddr.h>

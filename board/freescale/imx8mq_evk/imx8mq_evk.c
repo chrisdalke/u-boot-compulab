@@ -130,7 +130,7 @@ int board_phy_config(struct phy_device *phydev)
 #define USB_PHY_CTRL2_TXENABLEN0	BIT(8)
 
 static struct dwc3_device dwc3_device_data = {
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	.maximum_speed = USB_SPEED_HIGH,
 #else
 	.maximum_speed = USB_SPEED_SUPER,

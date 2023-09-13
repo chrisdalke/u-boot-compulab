@@ -113,7 +113,7 @@ static void omap_rev_string(void)
 		puts("\n");
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void spl_display_print(void)
 {
 	omap_rev_string();
@@ -183,19 +183,19 @@ void early_system_init(void)
 	hw_data_init();
 	init_package_revision();
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	if (warm_reset())
 		force_emif_self_refresh();
 #endif
 	watchdog_init();
 	set_mux_conf_regs();
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	srcomp_enable();
 	do_io_settings();
 #endif
 	setup_early_clocks();
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 	/*
 	 * Save the boot parameters passed from romcode.
 	 * We cannot delay the saving further than this,
@@ -226,7 +226,7 @@ void early_system_init(void)
 	prcm_init();
 }
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 void board_init_f(ulong dummy)
 {
 	early_system_init();

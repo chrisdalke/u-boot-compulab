@@ -10,7 +10,7 @@
 #include <asm/global_data.h>
 #include <dm/ofnode.h>
 
-#ifeq ($(CONFIG_SPL_BUILD),y)
+#ifdef CONFIG_SPL_BUILD
 static int setup_led(void)
 {
 #ifdef CONFIG_SPL_LED
