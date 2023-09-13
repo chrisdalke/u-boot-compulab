@@ -149,7 +149,7 @@ static int fdt_set_env_addr(void *blob)
 	return 0;
 }
 
-int ft_board_setup(void *blob, bd_t *bd)
+int ft_board_setup(void *blob, gd_t *bd)
 {
 	fdt_set_env_addr(blob);
 	fdt_set_sn(blob);
