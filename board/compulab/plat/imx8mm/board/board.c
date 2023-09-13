@@ -38,6 +38,14 @@ DECLARE_GLOBAL_DATA_PTR;
 static int env_dev = -1;
 static int env_part= -1;
 
+int get_env_dev() {
+	return env_dev;
+}
+
+int get_env_part() {
+	return env_dev;
+}
+
 #ifdef CONFIG_BOARD_POSTCLK_INIT
 int board_postclk_init(void)
 {
@@ -73,19 +81,19 @@ ulong board_get_usable_ram_top(ulong total_size)
         return gd->ram_top;
 }
 
-int dram_init(void)
-{
-	phys_size_t sdram_size;
-	int ret;
-	ret = board_phys_sdram_size(&sdram_size);
-	if (ret)
-		return ret;
+// int dram_init(void)
+// {
+// 	phys_size_t sdram_size;
+// 	int ret;
+// 	ret = board_phys_sdram_size(&sdram_size);
+// 	if (ret)
+// 		return ret;
 
-	/* rom_pointer[1] contains the size of TEE occupies */
-	gd->ram_size = sdram_size - rom_pointer[1];
+// 	/* rom_pointer[1] contains the size of TEE occupies */
+// 	gd->ram_size = sdram_size - rom_pointer[1];
 
-	return 0;
-}
+// 	return 0;
+// }
 
 #ifdef CONFIG_OF_BOARD_SETUP
 static void fdt_set_sn(void *blob)
