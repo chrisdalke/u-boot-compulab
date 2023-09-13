@@ -91,7 +91,7 @@ obj-$(CONFIG_AVB_SUPPORT) += avb/
 obj-$(CONFIG_$(SPL_TPL_)OF_LIBFDT) += libfdt/
 obj-$(CONFIG_$(SPL_TPL_)OF_REAL) += fdtdec_common.o fdtdec.o
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-$(CONFIG_SPL_YMODEM_SUPPORT) += crc16.o
 obj-$(CONFIG_$(SPL_TPL_)HASH) += crc16.o
 obj-$(CONFIG_MMC_SPI_CRC_ON) += crc16.o

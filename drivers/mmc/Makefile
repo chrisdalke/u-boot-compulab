@@ -15,7 +15,7 @@ endif
 
 obj-$(CONFIG_SUPPORT_EMMC_BOOT) += mmc_boot.o
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-$(CONFIG_SPL_MMC_BOOT) += fsl_esdhc_spl.o
 endif
 

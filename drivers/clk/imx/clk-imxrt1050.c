@@ -264,7 +264,7 @@ static int imxrt1050_clk_probe(struct udevice *dev)
 
 	struct clk *clk, *clk1;
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	/* bypass pll1 before setting its rate */
 	clk_get_by_id(IMXRT1050_CLK_PLL1_REF_SEL, &clk);
 	clk_get_by_id(IMXRT1050_CLK_PLL1_BYPASS, &clk1);

@@ -10,7 +10,7 @@
 #include <asm/arch/imx-regs.h>
 #include <linux/sizes.h>
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #include <config.h>
 #endif
 
@@ -55,7 +55,7 @@
 #define CONFIG_SYS_BOOTM_LEN		SZ_64M
 #define CONFIG_SPL_MAX_SIZE		(148 * SZ_1K)
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #define CONFIG_SPL_STACK		0x91fff0
 #define CONFIG_SPL_BSS_START_ADDR	0x910000
 #define CONFIG_SPL_BSS_MAX_SIZE		SZ_8K

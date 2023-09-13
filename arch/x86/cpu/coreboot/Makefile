@@ -14,7 +14,7 @@
 ifndef CONFIG_SPL
 obj-y += car.o
 endif
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-y += coreboot_spl.o
 else
 obj-y += sdram.o

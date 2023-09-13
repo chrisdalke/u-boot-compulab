@@ -294,7 +294,7 @@ static int setup_typec(void)
 
 
 static struct dwc3_device dwc3_device_data = {
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	.maximum_speed = USB_SPEED_HIGH,
 #else
 	.maximum_speed = USB_SPEED_SUPER,

@@ -4,7 +4,7 @@
 #include <asm/arch/clock.h>
 #include <asm/arch/prcm.h>
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 void clock_init_safe(void)
 {
 	struct sunxi_ccm_reg *const ccm =
@@ -55,7 +55,7 @@ void clock_init_uart(void)
 		     1 << (RESET_SHIFT + CONFIG_CONS_INDEX - 1));
 }
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 void clock_set_pll1(unsigned int clk)
 {
 	struct sunxi_ccm_reg * const ccm =

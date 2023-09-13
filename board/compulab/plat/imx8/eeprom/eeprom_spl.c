@@ -14,7 +14,7 @@
 #include <asm-generic/gpio.h>
 #include <asm/setup.h>
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 
 #define CONFIG_SYS_I2C_EEPROM_ADDR_P1	0x51
 #define CONFIG_SYS_I2C_EEPROM_ADDR_LEN	1

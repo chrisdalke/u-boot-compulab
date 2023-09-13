@@ -96,7 +96,7 @@ int hws_board_topology_load(struct serdes_map **serdes_map_array, u8 *count)
 
 void spl_board_init(void)
 {
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	uint k;
 	struct gpio_desc gpio = {};
 
@@ -151,7 +151,7 @@ struct mv_ddr_topology_map *mv_ddr_topology_map_get(void)
 
 int board_early_init_f(void)
 {
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	/* Configure MPP */
 	writel(0x00111111, MVEBU_MPP_BASE + 0x00);
 	writel(0x40040000, MVEBU_MPP_BASE + 0x04);

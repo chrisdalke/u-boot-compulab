@@ -24,7 +24,7 @@
 #include <mmc.h>
 #include <remoteproc.h>
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #ifdef CONFIG_K3_LOAD_SYSFW
 #ifdef CONFIG_TI_SECURE_DEVICE
 struct fwl_data cbass_hc_cfg0_fwls[] = {

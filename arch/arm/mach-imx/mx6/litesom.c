@@ -78,7 +78,7 @@ int litesom_mmc_init(struct bd_info *bis)
 }
 #endif
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #include <linux/libfdt.h>
 #include <spl.h>
 #include <asm/arch/mx6-ddr.h>

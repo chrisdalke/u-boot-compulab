@@ -45,7 +45,7 @@ struct imx_sec_config_fuse_t const imx_sec_config_fuse = {
 
 int timer_init(void)
 {
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	struct sctr_regs *sctr = (struct sctr_regs *)SYSCNT_CTRL_BASE_ADDR;
 	unsigned long freq = readl(&sctr->cntfid0);
 
@@ -1524,7 +1524,7 @@ int arch_misc_init(void)
 }
 #endif
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #ifdef CONFIG_IMX8MP
 #define HSIO_GPR_BASE                               (0x32F10000U)
 #define HSIO_GPR_REG_0_USB_CLOCK_MODULE_EN_SHIFT    (1)
@@ -1582,7 +1582,7 @@ int imx8m_usb_power(int usb_id, bool on)
 	if (usb_id > 1)
 		return -EINVAL;
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	imx8m_usb_power_domain(2 + usb_id, on);
 #else
 	struct arm_smccc_res res;

@@ -4,7 +4,7 @@
 #
 # Copyright (C) 2015 Compulab, Ltd.
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-y	+= spl.o mux.o
 else
 obj-y	+= cm_t43.o mux.o

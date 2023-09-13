@@ -212,7 +212,7 @@ void s_init(void)
 }
 #endif
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 void board_init_f(ulong dummy)
 {
 	early_system_init();

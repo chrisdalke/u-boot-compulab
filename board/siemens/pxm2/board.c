@@ -42,7 +42,7 @@
 #include <nand.h>
 #include <bmp_layout.h>
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 static void board_init_ddr(void)
 {
 struct emif_regs pxm2_ddr3_emif_reg_data = {

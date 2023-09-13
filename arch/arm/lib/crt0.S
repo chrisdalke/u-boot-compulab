@@ -166,7 +166,7 @@ here:
 	CLEAR_BSS
 #endif
 
-# ifdef CONFIG_SPL_BUILD
+# ifeq ($(CONFIG_SPL_BUILD),y)
 	/* Use a DRAM stack for the rest of SPL, if requested */
 	bl	spl_relocate_stack_gd
 	cmp	r0, #0

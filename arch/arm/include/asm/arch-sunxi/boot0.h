@@ -44,7 +44,7 @@
 #else
 	.word	0x09010040	// writeable RVBAR mapping address
 #endif
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	.word	CONFIG_SPL_TEXT_BASE
 #else
 	.word   CONFIG_SYS_TEXT_BASE

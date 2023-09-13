@@ -33,7 +33,7 @@ static const struct gpio_bank gpio_bank_44xx[6] = {
 
 const struct gpio_bank *const omap_gpio_bank = gpio_bank_44xx;
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 /*
  * Some tuning of IOs for optimal power and performance
  */

@@ -13,7 +13,7 @@
 #include <asm/arch/clock_manager.h>
 #include <linux/delay.h>
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 
 static u32 eosc1_hz;
 static u32 cb_intosc_hz;

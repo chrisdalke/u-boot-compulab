@@ -7,7 +7,7 @@
 #ifndef __CONFIG_UNCMD_SPL_H__
 #define __CONFIG_UNCMD_SPL_H__
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 /* SPL needs only BOOTP + TFTP so undefine other stuff to save space */
 
 #ifndef CONFIG_SPL_DM

@@ -4,7 +4,7 @@
 
 MINIMAL=
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 ifdef CONFIG_SPL_INIT_MINIMAL
 MINIMAL=y
 endif
@@ -13,7 +13,7 @@ endif
 ifdef MINIMAL
 obj-y	+= spl_minimal.o
 else
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-y	+= spl.o
 endif
 obj-y	+= p1_p2_rdb_pc.o

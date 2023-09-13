@@ -73,7 +73,7 @@ int misc_init_r(void)
 }
 
 /* SPL */
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 
 /* must set PB25 low to enable the CAN transceivers */
 static void board_can_stdby_dis(void)

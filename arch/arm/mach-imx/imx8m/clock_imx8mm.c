@@ -125,7 +125,7 @@ static int fracpll_configure(enum pll_clocks pll, u32 freq)
 	return 0;
 }
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 void dram_pll_init(ulong pll_val)
 {
 	fracpll_configure(ANATOP_DRAM_PLL, pll_val);

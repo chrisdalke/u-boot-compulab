@@ -455,7 +455,7 @@ out:
 	return ret;
 }
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 /* Load metadate from misc partition.
  */
 #if defined(CONFIG_IMX_TRUSTY_OS) || defined(CONFIG_DUAL_BOOTLOADER)

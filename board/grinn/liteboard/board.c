@@ -231,7 +231,7 @@ int checkboard(void)
 	return 0;
 }
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 void board_boot_order(u32 *spl_boot_list)
 {
 	struct src *psrc = (struct src *)SRC_BASE_ADDR;

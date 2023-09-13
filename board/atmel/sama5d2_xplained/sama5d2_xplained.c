@@ -101,7 +101,7 @@ int misc_init_r(void)
 #endif
 
 /* SPL */
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 void spl_board_init(void)
 {
 }

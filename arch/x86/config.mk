@@ -12,7 +12,7 @@ PF_CPPFLAGS_X86   := $(call cc-option, -fno-toplevel-reorder, \
 PLATFORM_CPPFLAGS += $(PF_CPPFLAGS_X86)
 PLATFORM_CPPFLAGS += -fno-dwarf2-cfi-asm
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 IS_32BIT := y
 else
 ifndef CONFIG_X86_64

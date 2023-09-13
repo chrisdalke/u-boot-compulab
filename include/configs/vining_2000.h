@@ -67,7 +67,7 @@
 /* 0=user, 1=boot0, 2=boot1, * 4..7=general0..3. */
 #endif
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #define CONFIG_MXC_UART_BASE		UART1_BASE
 #endif
 

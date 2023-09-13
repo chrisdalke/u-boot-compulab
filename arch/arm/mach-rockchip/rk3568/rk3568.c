@@ -90,7 +90,7 @@ void board_debug_uart_init(void)
 
 int arch_cpu_init(void)
 {
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	/* Set the emmc sdmmc0 to secure */
 	rk_clrreg(SGRF_BASE + SGRF_SOC_CON4, (EMMC_HPROT_SECURE_CTRL << 11
 		| SDMMC0_HPROT_SECURE_CTRL << 4));

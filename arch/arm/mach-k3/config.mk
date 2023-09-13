@@ -3,7 +3,7 @@
 # Copyright (C) 2017-2018 Texas Instruments Incorporated - http://www.ti.com/
 #	Lokesh Vutla <lokeshvutla@ti.com>
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 
 # Openssl is required to generate x509 certificate.
 # Error out if openssl is not available.

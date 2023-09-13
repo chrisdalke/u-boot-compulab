@@ -293,7 +293,7 @@ part_get_info_by_dev_and_name_or_num(const char *dev_iface,
  * We don't support printing partition information in SPL and only support
  * getting partition information in a few cases.
  */
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 # define part_print_ptr(x)	NULL
 # if defined(CONFIG_SPL_FS_EXT4) || defined(CONFIG_SPL_FS_FAT) || \
 	defined(CONFIG_SYS_MMCSD_RAW_MODE_U_BOOT_PARTITION) || \

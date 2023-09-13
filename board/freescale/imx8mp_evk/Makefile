@@ -6,7 +6,7 @@
 
 obj-y += imx8mp_evk.o
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-y += spl.o
 ifdef CONFIG_IMX8M_LPDDR4_FREQ0_3200MTS
 obj-y += lpddr4_timing_ndm.o

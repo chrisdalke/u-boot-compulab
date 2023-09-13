@@ -19,7 +19,7 @@ DECLARE_GLOBAL_DATA_PTR;
 
 int arch_reserve_stacks(void)
 {
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	gd->start_addr_sp -= 128;	/* leave 32 words for abort-stack */
 	gd->irq_sp = gd->start_addr_sp;
 #else

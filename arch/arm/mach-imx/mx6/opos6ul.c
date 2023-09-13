@@ -79,7 +79,7 @@ int dram_init(void)
 	return 0;
 }
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #include <asm/arch/mx6-ddr.h>
 #include <linux/libfdt.h>
 #include <spl.h>

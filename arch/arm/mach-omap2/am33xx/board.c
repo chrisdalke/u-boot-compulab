@@ -554,7 +554,7 @@ void early_system_init(void)
 	set_uart_mux_conf();
 	setup_early_clocks();
 	uart_soft_reset();
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	/*
 	 * Save the boot parameters passed from romcode.
 	 * We cannot delay the saving further than this,
@@ -566,7 +566,7 @@ void early_system_init(void)
 	debug_uart_init();
 #endif
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	spl_early_init();
 #endif
 
@@ -580,7 +580,7 @@ void early_system_init(void)
 #endif
 }
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 void board_init_f(ulong dummy)
 {
 	hw_data_init();

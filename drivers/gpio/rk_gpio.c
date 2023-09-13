@@ -75,7 +75,7 @@ static int rockchip_gpio_set_value(struct udevice *dev, unsigned offset,
 
 static int rockchip_gpio_get_function(struct udevice *dev, unsigned offset)
 {
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	return -ENODATA;
 #else
 	struct rockchip_gpio_priv *priv = dev_get_priv(dev);
@@ -93,7 +93,7 @@ static int rockchip_gpio_get_function(struct udevice *dev, unsigned offset)
 }
 
 /* Simple SPL interface to GPIOs */
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 
 enum {
 	PULL_NONE_1V8 = 0,

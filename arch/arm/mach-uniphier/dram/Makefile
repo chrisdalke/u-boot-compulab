@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-2.0+
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 
 obj-$(CONFIG_ARCH_UNIPHIER_LD4)		+= umc-ld4.o \
 					   ddrphy-training.o ddrphy-ld4.o

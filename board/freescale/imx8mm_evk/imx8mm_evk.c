@@ -38,7 +38,7 @@ static iomux_v3_cfg_t const wdog_pads[] = {
 };
 
 #ifdef CONFIG_NAND_MXS
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #define NAND_PAD_CTRL	(PAD_CTL_DSE6 | PAD_CTL_FSEL2 | PAD_CTL_HYS)
 #define NAND_PAD_READY0_CTRL (PAD_CTL_DSE6 | PAD_CTL_FSEL2 | PAD_CTL_PUE)
 static iomux_v3_cfg_t const gpmi_pads[] = {
@@ -63,7 +63,7 @@ static iomux_v3_cfg_t const gpmi_pads[] = {
 
 static void setup_gpmi_nand(void)
 {
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	imx_iomux_v3_setup_multiple_pads(gpmi_pads, ARRAY_SIZE(gpmi_pads));
 #endif
 

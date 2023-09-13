@@ -75,7 +75,7 @@ ulong board_get_usable_ram_top(ulong total_size)
 }
 #endif
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 static int gpio_init(void)
 {
 	__maybe_unused uint val;
@@ -277,7 +277,7 @@ uint32_t sunxi_get_boot_device(void)
 	return -1;		/* Never reached */
 }
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 static u32 sunxi_get_spl_size(void)
 {
 	if (!is_boot0_magic(SPL_ADDR + 4)) /* eGON.BT0 */

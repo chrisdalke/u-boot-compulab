@@ -33,7 +33,7 @@
 #include <usb.h>
 #include <serial.h>
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #include <spl.h>
 #endif
 

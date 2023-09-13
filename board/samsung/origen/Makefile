@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2011 Samsung Electronics
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 # necessary to create built-in.o
 obj- := __dummy__.o
 

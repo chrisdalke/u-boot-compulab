@@ -18,7 +18,7 @@
 #define PMUGRF_CON0_VSEL_SHIFT 8
 #define PMUGRF_CON0_VOL_SHIFT 9
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 /* provided to defeat compiler optimisation in board_init_f() */
 void gru_dummy_function(int i)
 {

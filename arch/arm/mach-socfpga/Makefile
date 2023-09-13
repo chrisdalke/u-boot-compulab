@@ -71,7 +71,7 @@ obj-y	+= wrap_handoff_soc64.o
 obj-y	+= wrap_pll_config_soc64.o
 endif
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 ifdef CONFIG_TARGET_SOCFPGA_GEN5
 obj-y	+= spl_gen5.o
 obj-y	+= freeze_controller.o

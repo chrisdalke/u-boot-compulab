@@ -13,7 +13,7 @@ obj-$(CONFIG_SOC_DM644X)	+= dm644x.o
 obj-$(CONFIG_SOC_DM646X)	+= dm646x.o
 obj-$(CONFIG_SOC_DA850)	+= da850_pinmux.o
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-$(CONFIG_SPL_FRAMEWORK)	+= spl.o
 obj-$(CONFIG_SOC_DM365)	+= dm365_lowlevel.o
 obj-$(CONFIG_SOC_DA8XX)	+= da850_lowlevel.o

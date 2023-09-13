@@ -3,7 +3,7 @@
 # (C) Copyright 2014  DENX Software Engineering GmbH
 # Written-by: Albert ARIBAUD <albert.aribaud@3adev.fr>
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-y	+= work_92105_spl.o
 else
 obj-y	+= work_92105.o

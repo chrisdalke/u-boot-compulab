@@ -320,7 +320,7 @@ endif
 # do not delete intermediate files automatically
 .SECONDARY:
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 SPL_ := SPL_
 ifeq ($(CONFIG_TPL_BUILD),y)
 SPL_TPL_ := TPL_

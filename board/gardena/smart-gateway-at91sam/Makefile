@@ -2,6 +2,6 @@
 
 obj-y += board.o
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-y += spl.o
 endif

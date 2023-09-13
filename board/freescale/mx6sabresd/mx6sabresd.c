@@ -1282,7 +1282,7 @@ int is_recovery_key_pressing(void)
 
 #endif /*CONFIG_FSL_FASTBOOT*/
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #include <asm/arch/mx6-ddr.h>
 #include <spl.h>
 #include <linux/libfdt.h>

@@ -6,7 +6,7 @@ endif
 
 obj-y += common.o ddr.o
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-y += spl.o
 obj-$(CONFIG_SPL_ATF) += spl_atf.o
 endif

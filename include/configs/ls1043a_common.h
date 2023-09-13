@@ -8,7 +8,7 @@
 #define __LS1043A_COMMON_H
 
 /* SPL build */
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #define SPL_NO_FMAN
 #define SPL_NO_DSPI
 #define SPL_NO_PCIE

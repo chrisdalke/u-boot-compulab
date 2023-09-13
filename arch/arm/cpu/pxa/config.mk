@@ -13,6 +13,6 @@
 # they are not discarded.
 #
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 OBJCOPYFLAGS += -j .text.0 -j .text.1
 #endif

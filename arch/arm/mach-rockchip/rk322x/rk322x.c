@@ -52,7 +52,7 @@ void board_debug_uart_init(void)
 
 int arch_cpu_init(void)
 {
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #define SGRF_BASE	0x10150000
 	static struct rk322x_sgrf * const sgrf = (void *)SGRF_BASE;
 

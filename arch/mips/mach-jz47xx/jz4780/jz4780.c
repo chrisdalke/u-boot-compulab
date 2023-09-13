@@ -20,7 +20,7 @@
 #include <mmc.h>
 #include <spl.h>
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 /* Pointer to the global data structure for SPL */
 DECLARE_GLOBAL_DATA_PTR;
 gd_t gdata __section(".bss");

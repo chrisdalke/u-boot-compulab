@@ -24,7 +24,7 @@ obj-$(CONFIG_SANDBOX) += i2c_eeprom_emul.o
 endif
 endif
 ifdef CONFIG_SPL_OF_PLATDATA
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-$(CONFIG_SANDBOX) += spltest_sandbox.o
 endif
 endif

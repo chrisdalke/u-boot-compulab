@@ -40,7 +40,7 @@
 #include "../common/factoryset.h"
 #include <nand.h>
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 static struct draco_baseboard_id __section(".data") settings;
 
 #if DDR_PLL_FREQ == 303
@@ -169,7 +169,7 @@ static int read_eeprom(void)
 		return 1;
 	}
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	/* Read Siemens eeprom data (DDR3) */
 	if (i2c_read(EEPROM_ADDR, EEPROM_ADDR_DDR3, 2,
 		     (uchar *)&settings.ddr3, sizeof(struct ddr3_data))) {
@@ -206,7 +206,7 @@ static int read_eeprom(void)
 	return 0;
 }
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 static void board_init_ddr(void)
 {
 struct emif_regs draco_ddr3_emif_reg_data = {

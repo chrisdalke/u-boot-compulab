@@ -33,7 +33,7 @@
 /* Common ENV setting */
 
 /* SF MTD */
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #undef CONFIG_DM_SPI
 #undef CONFIG_DM_SPI_FLASH
 #endif

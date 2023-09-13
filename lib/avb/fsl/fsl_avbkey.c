@@ -32,7 +32,7 @@
 #include <asm/arch/sci/sci.h>
 #endif
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #include <spl.h>
 #endif
 
@@ -809,7 +809,7 @@ int rbkidx_erase(void) {
 }
 #endif /* AVB_RPMB */
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #if defined (CONFIG_IMX8_TRUSTY_XEN) || \
 	(defined(CONFIG_IMX_TRUSTY_OS) && !defined(CONFIG_AVB_ATX))
 int check_rpmb_blob(struct mmc *mmc)

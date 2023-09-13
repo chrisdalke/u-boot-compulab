@@ -85,7 +85,7 @@ int dram_init(void)
 }
 
 /* SPL */
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 
 static void board_leds_init(void)
 {

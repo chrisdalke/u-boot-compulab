@@ -13,7 +13,7 @@
 #ifdef CONFIG_SPL
 #include "imx6_spl.h"
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #undef CONFIG_DM_REGULATOR
 #endif
 #endif

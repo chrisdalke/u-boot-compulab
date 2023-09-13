@@ -156,7 +156,7 @@ int board_early_init_f(void)
 	return 0;
 }
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 void board_init_f(ulong dummy)
 {
 	void (*second_uboot)(void);

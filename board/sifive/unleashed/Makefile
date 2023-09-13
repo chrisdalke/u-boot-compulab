@@ -2,7 +2,7 @@
 #
 # Copyright (c) 2019 Western Digital Corporation or its affiliates.
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-y += spl.o
 else
 obj-y += unleashed.o

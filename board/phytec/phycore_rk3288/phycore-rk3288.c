@@ -78,7 +78,7 @@ int rk3288_board_late_init(void)
 	return 0;
 }
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #if !defined(CONFIG_SPL_OF_PLATDATA)
 static int phycore_init(void)
 {

@@ -11,7 +11,7 @@
 #include <linux/sizes.h>
 
 #include "mx6_common.h"
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #include "imx6_spl.h"
 #endif
 

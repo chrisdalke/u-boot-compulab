@@ -11,7 +11,7 @@
 
 int sdp_init(int controller_index);
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #include <spl.h>
 
 int spl_sdp_handle(int controller_index, struct spl_image_info *spl_image,

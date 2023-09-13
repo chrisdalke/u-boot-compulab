@@ -9,7 +9,7 @@ lib-$(CONFIG_USE_PRIVATE_LIBGCC) += _ashldi3.o _ashrdi3.o _lshrdi3.o
 
 MINIMAL=
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 ifdef CONFIG_SPL_INIT_MINIMAL
 MINIMAL=y
 endif
@@ -43,6 +43,6 @@ obj-y	+= time.o
 obj-y	+= traps.o
 endif # not minimal
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-$(CONFIG_$(SPL_TPL)_FRAMEWORK) += spl.o
 endif

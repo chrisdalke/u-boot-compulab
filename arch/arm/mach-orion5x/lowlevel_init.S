@@ -69,7 +69,7 @@
 
 lowlevel_init:
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 
 	/* Use 'r2 as the base for internal register accesses */
 	ldr	r2, =ORION5X_REGS_PHY_BASE

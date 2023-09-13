@@ -76,7 +76,7 @@ static int rockchip_dwmmc_of_to_plat(struct udevice *dev)
 		return -EINVAL;
 	priv->fifo_mode = dev_read_bool(dev, "fifo-mode");
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	if (!priv->fifo_mode)
 		priv->fifo_mode = dev_read_bool(dev, "u-boot,spl-fifo-mode");
 #endif

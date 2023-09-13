@@ -9,7 +9,7 @@
 _start:
 	ARM_VECTORS
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	.balignl 64,0xf33db33f;
 
 	.word	0x1337c0d3;	/* SoCFPGA preloader validation word */

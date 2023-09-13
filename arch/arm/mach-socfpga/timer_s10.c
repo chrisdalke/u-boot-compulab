@@ -14,7 +14,7 @@
  */
 int timer_init(void)
 {
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	int enable = 0x3;	/* timer enable + output signal masked */
 	int loadval = ~0;
 

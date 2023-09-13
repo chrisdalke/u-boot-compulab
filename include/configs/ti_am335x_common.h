@@ -17,7 +17,7 @@
 #include <asm/arch/omap.h>
 
 /* NS16550 Configuration */
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #define CONFIG_SYS_NS16550_SERIAL
 #ifndef CONFIG_DM_SERIAL
 #define CONFIG_SYS_NS16550_REG_SIZE	(-4)

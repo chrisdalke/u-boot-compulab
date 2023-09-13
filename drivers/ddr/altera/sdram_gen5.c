@@ -21,7 +21,7 @@
 
 #include "sequencer.h"
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 
 struct altera_gen5_sdram_priv {
 	struct ram_info info;

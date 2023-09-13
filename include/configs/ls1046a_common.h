@@ -8,7 +8,7 @@
 #define __LS1046A_COMMON_H
 
 /* SPL build */
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #define SPL_NO_QBMAN
 #define SPL_NO_FMAN
 #define SPL_NO_ENV

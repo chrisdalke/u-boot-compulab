@@ -2,7 +2,7 @@
 
 obj-y   += imx8ulp_watch.o
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-y += spl.o
 obj-y += lpddr4x_timing.o
 endif

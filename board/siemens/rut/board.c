@@ -47,7 +47,7 @@ static int read_eeprom(void)
 	return 0;
 }
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 static void board_init_ddr(void)
 {
 struct emif_regs rut_ddr3_emif_reg_data = {

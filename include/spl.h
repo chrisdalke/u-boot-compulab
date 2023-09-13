@@ -199,7 +199,7 @@ static inline const char *spl_phase_prefix(enum u_boot_phase phase)
 }
 
 /* A string name for SPL or TPL */
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 # ifdef CONFIG_TPL_BUILD
 #  define SPL_TPL_NAME	"TPL"
 # else

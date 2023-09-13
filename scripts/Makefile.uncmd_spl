@@ -2,7 +2,7 @@
 # Makefile version of include/config_uncmd_spl.h
 # TODO: Invent a better way
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 
 ifndef CONFIG_SPL_DM
 CONFIG_DM_SERIAL=

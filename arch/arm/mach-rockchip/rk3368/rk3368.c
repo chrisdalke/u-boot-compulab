@@ -97,7 +97,7 @@ int arch_early_init_r(void)
 }
 #endif
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 /*
  * The SPL (and also the full U-Boot stage on the RK3368) will run in
  * secure mode (i.e. EL3) and an ATF will eventually be booted before

@@ -5,7 +5,7 @@
 
 obj-y += imx8mq_phanbell.o
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-y += spl.o
 obj-$(CONFIG_IMX8M_LPDDR4) += lpddr4_timing_1g.o
 endif

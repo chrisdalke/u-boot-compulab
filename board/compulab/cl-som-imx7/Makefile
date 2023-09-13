@@ -10,7 +10,7 @@
 
 obj-y := mux.o common.o
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-y  += spl.o
 else
 obj-y  += cl-som-imx7.o

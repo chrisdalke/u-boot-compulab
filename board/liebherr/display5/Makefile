@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier:    GPL-2.0+
 #
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-y = spl.o
 else
 obj-y := display5.o

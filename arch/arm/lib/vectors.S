@@ -129,7 +129,7 @@ _fiq:			.word fiq
 
 /* SPL interrupt handling: just hang */
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 
 	.align	5
 undefined_instruction:

@@ -453,7 +453,7 @@ int checkboard(void)
 	return 0;
 }
 
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #include <spl.h>
 
 void board_init_f(ulong dummy)

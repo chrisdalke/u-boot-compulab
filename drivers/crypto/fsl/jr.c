@@ -858,7 +858,7 @@ int sec_init_idx(uint8_t sec_idx)
 	jr_reset();
 
 #ifdef CONFIG_FSL_CORENET
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 	/*
 	 * For SPL Build, Set the Liodns in SEC JR0 for
 	 * creating PAMU entries corresponding to these.

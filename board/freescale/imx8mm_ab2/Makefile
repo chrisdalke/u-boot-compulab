@@ -6,7 +6,7 @@
 
 obj-y += imx8mm_ab2.o
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 obj-y += spl.o
 obj-$(CONFIG_TARGET_IMX8MM_AB2) += lpddr4_imx8mm_som.o
 obj-$(CONFIG_TARGET_IMX8MM_DDR4_AB2) += ddr4_imx8mm_som.o

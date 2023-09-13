@@ -164,7 +164,7 @@
  * Disable MMC DM for SPL build and can be re-enabled after adding
  * DM support in SPL
  */
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 #undef CONFIG_DM_MMC
 #undef CONFIG_TIMER
 #endif

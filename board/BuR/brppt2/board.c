@@ -17,7 +17,7 @@
 #include <asm/arch/sys_proto.h>
 #include <asm/arch/iomux.h>
 #include <asm/arch/mx6-pins.h>
-#ifdef CONFIG_SPL_BUILD
+#ifeq ($(CONFIG_SPL_BUILD),y)
 # include <asm/arch/mx6-ddr.h>
 #endif
 #include <asm/arch/clock.h>

@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-2.0+
 
-ifdef CONFIG_SPL_BUILD
+ifeq ($(CONFIG_SPL_BUILD),y)
 
 obj-$(CONFIG_ARCH_UNIPHIER_LD4)		+= clk-early-ld4.o clk-dram-ld4.o dpll-ld4.o
 obj-$(CONFIG_ARCH_UNIPHIER_PRO4)	+= clk-early-ld4.o clk-dram-ld4.o dpll-pro4.o
