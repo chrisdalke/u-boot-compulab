@@ -38,6 +38,14 @@ DECLARE_GLOBAL_DATA_PTR;
 static int env_dev = -1;
 static int env_part= -1;
 
+int get_env_dev() {
+	return env_dev;
+}
+
+int get_env_part() {
+	return env_dev;
+}
+
 #ifdef CONFIG_BOARD_POSTCLK_INIT
 int board_postclk_init(void)
 {
